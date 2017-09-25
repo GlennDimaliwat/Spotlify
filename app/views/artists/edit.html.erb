@@ -2,5 +2,7 @@
 
 <%= render 'form', artist: @artist %>
 
-<%= link_to 'Show', @artist %> |
-<%= link_to 'Back', artists_path %>
+<nav>
+<%= link_to "<button>Show Info</button>".html_safe, @artist %>
+<%= link_to "<button>Back</button>".html_safe, artists_path %>
+</nav>

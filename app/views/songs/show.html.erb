@@ -1,23 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
+<h1 class="<%= @color_scheme %>">
   <%= @song.name %>
 </h1>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist.name %>
-</p>
+<div class="songs">
+  <p>
+    <strong>Artist:</strong>
+    <%= link_to @song.artist.name, @song.artist %>
+  </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= format_duration @song.duration  %>
-</p>
+  <p>
+    <strong>Duration:</strong>
+    <%= format_duration @song.duration  %>
+  </p>
 
-<p>
-  <strong>Released at:</strong>
-  <%= @song.released_at %>
-</p>
+  <p>
+    <strong>Released at:</strong>
+    <%= @song.released_at %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<nav>
+  <%= link_to "<button class=\"#{@color_scheme}\">Edit Song</button>".html_safe, edit_song_path(@song) %>
+  <%= link_to "<button class=\"#{@color_scheme}\">Back</button>".html_safe, songs_path %>
+</nav>

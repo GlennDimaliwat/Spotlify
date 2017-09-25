@@ -1,6 +1,8 @@
-<h1>Editing Song</h1>
+<h1 class="<%= @color_scheme %>">Editing Song</h1>
 
 <%= render 'form', song: @song %>
 
-<%= link_to 'Show', @song %> |
-<%= link_to 'Back', songs_path %>
+<nav>
+    <%= link_to "<button class=\"#{@color_scheme}\">Show Song</button>".html_safe, @song %>
+    <%= link_to "<button class=\"#{@color_scheme}\">Back</button>".html_safe, songs_path %>
+</nav>

@@ -3,14 +3,14 @@
 <h1>Artists</h1>
 
 <% @artists.each do |artist| %>
-  <div>
+  <div class="artists">
     <h2><%= link_to artist.name, artist %></h2>
-    <p><%= artist.genre %></p>
-    <p><%= link_to 'Edit', edit_artist_path(artist) %></p>
-    <p><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p><%= artist.genre %> |
+    <%= link_to "<button>Edit</button>".html_safe, edit_artist_path(artist) %>
+    <%= link_to "<button>Delete</button>".html_safe, artist, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
 <% end %>
 
 <br>
 
-<%= link_to 'New Artist', new_artist_path %>
+<nav><%= link_to "<button>Add New Artist</button>".html_safe, new_artist_path %></nav>

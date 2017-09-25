@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>
   <%= @artist.name %>
 </h1>
 
+<div class="artists">
 <p>
   <strong>Bio:</strong>
   <%= @artist.bio %>
@@ -14,5 +16,13 @@
   <%= @artist.genre %>
 </p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<h2>Songs</h2>
+<% @songs.each do |song| %>
+  <p><%= link_to song.name, song %></p>
+<% end %>
+</div>
+
+<nav>
+  <%= link_to "<button>Edit Song</button>".html_safe, edit_artist_path(@artist) %>
+  <%= link_to "<button>Back</button>".html_safe, artists_path %>
+</nav>

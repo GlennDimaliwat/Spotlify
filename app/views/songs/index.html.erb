@@ -2,7 +2,7 @@
 
 <h1>Songs</h1>
 
-<table>
+<table class="songs_table">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,9 +20,9 @@
         <td><%= song.artist.name %></td>
         <td><%= format_duration song.duration %></td>
         <td><%= song.released_at %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "<button>Show</button>".html_safe, song %></td>
+        <td><%= link_to "<button>Edit</button>".html_safe, edit_song_path(song) %></td>
+        <td><%= link_to "<button>Delete</button>".html_safe, song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,7 @@
 
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+<nav>
+  <%= link_to "<button>Add New Song</button>".html_safe, new_song_path %>
+  <%= link_to "<button>Back to Artists</button>".html_safe, artists_path %>
+</nav>
