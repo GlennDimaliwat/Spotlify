@@ -2,6 +2,28 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :set_color_scheme, only: [:show, :edit]
 
+  # Retrieves Top 10 Songs played
+  def top_10_songs
+    # @play_count = PlayCount.all.group(:song_id).count #.order("count_all desc")
+    # @play_count.each { |song_id, count|
+    #   p song_id
+    # }
+    @songs = Song.top10
+    # p @play_count
+    # p @play_count.inspect
+  end
+
+  # Play a Song
+  def play_song
+    set_song
+    set_color_scheme
+    @play_count = PlayCount.new
+    @play_count.song = @song
+    @play_count.save
+    
+    # p @play_count
+  end
+
   # GET /songs
   # GET /songs.json
   def index

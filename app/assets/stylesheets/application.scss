@@ -55,6 +55,7 @@ div.artists, div.songs, form, table.songs_table {
 }
 
 button {
+    cursor: pointer;
     background-color: $spotify_green;
     border-radius: 15px;
     outline: none;
@@ -74,11 +75,12 @@ button {
 }
 
 div.actions input {
+    cursor: pointer;
     border-radius: 15px;
     outline: none;
     border: 0;
-    height: 20px;
-    width: 100px;
+    height: 30px;
+    width: 120px;
 
     a {
         text-decoration: none;

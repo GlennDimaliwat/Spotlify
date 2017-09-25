@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Top 10 Songs</h1>
+
+<div class="songs">
+    <% rank = 1 %>
+    <% @songs.each do |song| %>
+        <h2>#<%= link_to "#{rank} #{song.artist.name} - #{song.name} - #{song.play_count.size} plays", song %></h2>
+        <% rank += 1 %>
+    <% end %>
+</div>
+
+<br>
+
+<nav>
+<%= link_to "<button>Back to Artists</button>".html_safe, artists_path %>
+</nav>
