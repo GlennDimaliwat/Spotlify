@@ -1,24 +1,29 @@
-# README
+# Spotlify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Streaming music service.
 
-Things you may want to cover:
+## Artist
+- name: string
+- bio: text
+- genre: string
+- (albums)
+- (label)
 
-* Ruby version
+## Song
+- name: string
+- artist: string -> Artist
+- duration: integer
+- released_at: date
+- (album)
+- (genre)
 
-* System dependencies
+## Playlists
+- name: string
+- songs -> Many Songs
+- created_at: timestamp
+- (subscribers)
+- (is public)
 
-* Configuration
 
-* Database creation
+- Users can sign up, create a profile
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
