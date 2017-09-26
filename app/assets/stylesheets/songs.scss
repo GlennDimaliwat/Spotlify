@@ -2,25 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$eitghtees_color_scheme: #FF48C4;
-$ninetees_color_scheme: #89AEE1;
-$two_thousands_color_scheme: #9A1D33;
-$white: #FFFFFF;
-$spotify_green: #6AE368;
-
-.eightees {
-    background-color: $eitghtees_color_scheme;
-}
-
-.ninetees {
-    background-color: $ninetees_color_scheme;
-}
-
-.two_thousands {
-    background-color: $two_thousands_color_scheme;
-    color: $white;
-}
-
-.default {
-    background-color: $spotify_green;
-}

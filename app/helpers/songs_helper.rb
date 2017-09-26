@@ -10,14 +10,14 @@ module SongsHelper
     end
 
     def format_color_scheme(released_at)
-        year_category = released_at.strftime("%Y")
+        year_category = released_at.year
         
-        if year_category.starts_with?("198")
-            "eightees"
-        elsif year_category.starts_with?("199")
-            "ninetees"
-        elsif year_category.starts_with?("20")
+        if year_category >= 2000
             "two_thousands"
+        elsif year_category >= 1990
+            "ninetees"
+        elsif year_category >= 1980
+            "eightees"
         else
             "default"
         end
