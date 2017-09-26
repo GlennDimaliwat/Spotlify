@@ -22,6 +22,30 @@ class SongsController < ApplicationController
     @play_count.save
     
     # p @play_count
+
+    # Pat's solution
+    # Model.find_by - Selects the first one
+    # Model.where - Selects all
+    # Find existing play count record for this song, if it exists
+    # play_count = PlayCount.find_by(song: @song)
+    # # Never been played if there is no play count record yet
+    # if play_count == nil
+    #   # Create play count in the database for this song
+    #   play_count = PlayCount.new(song: @song, count: 1)
+    #   # Save to database
+    #   play_count.save
+    # else
+    #   # Increment that play count's count value
+    #   play_count.count += 1
+    #   # Save to database
+    #   play_count.save
+    # end
+    #
+    # In model:
+    # has_one: play_count # Better way
+    #
+    # In view:
+    # <%= @song.play_count.count %>
   end
 
   # GET /songs
