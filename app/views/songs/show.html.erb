@@ -1,4 +1,4 @@
-<h1 class="<%= @color_scheme %>">
+<h1 class="<%= format_color_scheme @song.released_at %>">
   <%= @song.name %>
 </h1>
 
@@ -22,7 +22,7 @@
 </div>
 
 <nav>
-  <%= link_to "<button class=\"#{@color_scheme}\">Play Song</button>".html_safe, play_song_url(@song) %>
-  <%= link_to "<button class=\"#{@color_scheme}\">Edit Song Info</button>".html_safe, edit_song_path(@song) %>
-  <%= link_to "<button class=\"#{@color_scheme}\">Back</button>".html_safe, songs_path %>
+  <%= link_to "<button class=\"#{format_color_scheme @song.released_at}\">Play Song</button>".html_safe, play_song_url(@song) %>
+  <%= link_to "<button class=\"#{format_color_scheme @song.released_at}\">Edit Song Info</button>".html_safe, edit_song_path(@song) %>
+  <%= link_to "<button class=\"#{format_color_scheme @song.released_at}\">Back</button>".html_safe, songs_path %>
 </nav>

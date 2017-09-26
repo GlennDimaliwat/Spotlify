@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-  before_action :set_color_scheme, only: [:show, :edit]
+  # before_action :set_color_scheme, only: [:show, :edit] # Moved to Song Helper
 
   # Retrieves Top 10 Songs played
   def top_10_songs
@@ -16,7 +16,7 @@ class SongsController < ApplicationController
   # Play a Song
   def play_song
     set_song
-    set_color_scheme
+    # set_color_scheme
     @play_count = PlayCount.new
     @play_count.song = @song
     @play_count.save
@@ -85,30 +85,30 @@ class SongsController < ApplicationController
   end
 
   private
-    # Set page color scheme
-    def set_color_scheme
+    # # Set page color scheme
+    # def set_color_scheme
       
-      # Color Scheme Variable
-      @color_scheme = ""
+    #   # Color Scheme Variable
+    #   @color_scheme = ""
 
-      @song = Song.find(params[:id])
-      year_category = @song.released_at.strftime("%Y")
+    #   @song = Song.find(params[:id])
+    #   year_category = @song.released_at.strftime("%Y")
 
-      if year_category.starts_with?("198")
-        @color_scheme = "eightees"
+    #   if year_category.starts_with?("198")
+    #     @color_scheme = "eightees"
 
-      elsif year_category.starts_with?("199")
-        @color_scheme = "ninetees"
+    #   elsif year_category.starts_with?("199")
+    #     @color_scheme = "ninetees"
 
-      elsif year_category.starts_with?("20")
-        @color_scheme = "two_thousands"
+    #   elsif year_category.starts_with?("20")
+    #     @color_scheme = "two_thousands"
 
-      else
-        @color_scheme = "default"
+    #   else
+    #     @color_scheme = "default"
 
-      end
+    #   end
 
-    end
+    # end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_song

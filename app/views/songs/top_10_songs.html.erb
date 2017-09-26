@@ -5,7 +5,8 @@
 <div class="songs">
     <% rank = 1 %>
     <% @songs.each do |song| %>
-        <h2>#<%= link_to "#{rank} #{song.artist.name} - #{song.name} - #{song.play_count.size} plays", song %></h2>
+        <h2>#<%= link_to "#{rank} #{song.artist.name} - #{song.name}", song %></h2>
+        <p>(Played <%= song.play_count.size %> times)</p>
         <% rank += 1 %>
     <% end %>
 </div>
