@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="<%= @color_scheme %>">
+<h1 class="<%= format_color_scheme @song.released_at %>">
   Now Playing: <%= @song.name %>
 </h1>
 
@@ -22,5 +22,5 @@
 </div>
 
 <nav>
-  <%= link_to "<button class=\"#{@color_scheme}\">Stop Playing</button>".html_safe, songs_path %>
+  <%= link_to "<button class=\"#{ format_color_scheme @song.released_at }\">Stop Playing</button>".html_safe, songs_path %>
 </nav>

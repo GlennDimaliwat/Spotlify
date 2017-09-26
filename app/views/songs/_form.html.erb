@@ -32,6 +32,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit nil, class: format_color_scheme(0) %>
+    <%= form.submit nil, class: song.released_at.nil? ? format_color_scheme(0) : format_color_scheme(song.released_at) %>
   </div>
 <% end %>
